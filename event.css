@@ -1,0 +1,31 @@
+.center {
+  text-align:center;
+  }
+  #title {
+    text-shadow: 5px -3px yellow;
+  }
+body {
+  background-color: aquamarine
+}
+#location {
+  color:blue;
+  font-style: oblique;
+  text-decoration: underline wavy black;
+  font-size: 24px;
+}
+
+#start{
+  text-align:right;
+  color:coral;
+  text-decoration: underline;
+  font-size: 18px
+}
+
+#prize {
+  color: darkmagenta;
+  font-size: 50px
+
+}
+#especification {
+  font-size: 9px;
+}
