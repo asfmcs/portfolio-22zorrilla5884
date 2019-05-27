@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>da maze FULL</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>da maze FULL</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    var smallRad=15;
+var bodyHeight=60;
+var bodyWidth=70;
+var pupilRad=8;
+var eyeRad=15;
+
+function start(){
+    //BACKGROUND
+    var back = new Rectangle(10000,10000);
+back.setColor(Color.black);
+back.setPosition(-1,-1);
+add(back);
+
+daBob();
+    drawPacman(150,80);
+    drawGhost(Color.blue,-30,290);
+drawGhost(Color.orange,300,200);
+drawGhost(Color.red,130,360);
+drawGhost(Color.purple,350,80);
+}
+//PACMAN
+function drawPacman(x,y){
+    var body= new Arc(60,30,340,0);
+    body.setColor(Color.yellow);
+    body.setPosition(x+20,y+20);
+    add(body);
+    
+    var eye= new Circle(10);
+    eye.setColor(Color.black);
+    eye.setPosition(x+30,y-8);
+    add(eye);
+}
+//GHOSTS
+function drawGhost(color,x,y,){
+var body = new Rectangle(bodyWidth,bodyHeight);
+ body.setColor(color);
+ body.setPosition(x,y);
+ add(body);
+ 
+ var head= new Circle(35.25);
+ head.setColor(color);
+ head.setPosition(x+35,y+7);
+ add(head);
+ 
+ var feet= new Circle(14);
+ feet.setColor(color);
+ feet.setPosition(x+56,y+56);
+ add(feet);
+ 
+ var feet2= new Circle(14);
+ feet2.setColor(color);
+ feet2.setPosition(x+14,y+56);
+ add(feet2);
+ 
+ var feet3= new Circle(14);
+ feet3.setColor(color);
+ feet3.setPosition(x+35,y+56);
+ add(feet3);
+ 
+ var eyeL = new Circle(eyeRad);
+ eyeL.setColor(Color.white);
+ eyeL.setPosition(x+16,y+2);
+ add(eyeL);
+ 
+ var eyeR = new Circle(eyeRad);
+ eyeR.setColor(Color.white);
+ eyeR.setPosition(x+50,y+2);
+ add(eyeR);
+ 
+ var pupilL = new Circle(pupilRad);
+ pupilL.setColor(Color.blue);
+ pupilL.setPosition(x+12,y+1);
+ add(pupilL);
+ 
+ var pupilR = new Circle(pupilRad);
+ pupilR.setColor(Color.blue);
+ pupilR.setPosition(x+46,y+1);
+ add(pupilR);
+}
+ //LINES FOR MAZE
+ function daBob(){
+ var line1 = new Line(350, 300, 400, 300);
+ line1.setColor(Color.blue);
+ line1.setLineWidth(4);
+ add(line1);
+ 
+ var line2 = new Line(350, 300, 350, 500);
+ line2.setColor(Color.blue);
+ line2.setLineWidth(4);
+ add(line2);
+ 
+ var line3 = new Line(230, 160, 230, 500);
+ line3.setColor(Color.blue);
+ line3.setLineWidth(4);
+ add(line3);
+ 
+ var line4 = new Line(230, 160, 500, 160);
+ line4.setColor(Color.blue);
+ line4.setLineWidth(4);
+ add(line4);
+ 
+ var line5 = new Line(100, 40, 400, 40);
+ line5.setColor(Color.blue);
+ line5.setLineWidth(4);
+ add(line5);
+ 
+ var line6 = new Line(100, 40, 100, 250);
+ line6.setColor(Color.blue);
+ line6.setLineWidth(4);
+ add(line6);
+ 
+ var line7 = new Line(100, 250, 0, 250);
+ line7.setColor(Color.blue);
+ line7.setLineWidth(4);
+ add(line7);
+ 
+ var line8 = new Line(100, 375, 100, 500);
+ line8.setColor(Color.blue);
+ line8.setLineWidth(4);
+ add(line8);
+ 
+ var line9 = new Line(0, 375, 100, 375);
+ line9.setColor(Color.blue);
+ line9.setLineWidth(4);
+ add(line9);
+ 
+//PELLETS FOR MAZE
+var ball1 = new Circle(10);
+ball1.setPosition(300,100);
+ball1.setColor(Color.yellow);
+add(ball1);
+ 
+ var ball2 = new Circle(10);
+ball2.setPosition(200,98);
+ball2.setColor(Color.yellow);
+add(ball2);
+ 
+ 
+ var ball3 = new Circle(10);
+ball3.setPosition(300,230);
+ball3.setColor(Color.yellow);
+add(ball3);
+
+var ball4 = new Circle(10);
+ball4.setPosition(300,330);
+ball4.setColor(Color.yellow);
+add(ball4);
+ 
+ var ball5 = new Circle(10);
+ball5.setPosition(300,430);
+ball5.setColor(Color.yellow);
+add(ball5);
+ 
+ var ball6 = new Circle(10);
+ball6.setPosition(400,230);
+ball6.setColor(Color.yellow);
+add(ball6);
+ 
+ var ball7 = new Circle(10);
+ball7.setPosition(400,100);
+ball7.setColor(Color.yellow);
+add(ball7);
+ 
+ var ball8 = new Circle(10);
+ball8.setPosition(50,315);
+ball8.setColor(Color.yellow);
+add(ball8);
+
+var ball9 = new Circle(10);
+ball9.setPosition(50,100);
+ball9.setColor(Color.yellow);
+add(ball9);
+
+var ball10 = new Circle(10);
+ball10.setPosition(50,190);
+ball10.setColor(Color.yellow);
+add(ball10);
+ }
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
